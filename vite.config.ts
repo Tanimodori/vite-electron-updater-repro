@@ -16,7 +16,7 @@ const config: UserConfig = {
         entryFileNames: (info) => {
           // output current processing module name
           console.log(info.name);
-          return `${info}.js`;
+          return `${info.name}.js`;
         },
       },
       external: (src) => {
