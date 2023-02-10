@@ -13,6 +13,11 @@ const config: UserConfig = {
     rollupOptions: {
       output: {
         preserveModules: true,
+        entryFileNames: (info) => {
+          // output current processing module name
+          console.log(info.name);
+          return `${info}.js`;
+        },
       },
       external: (src) => {
         const [name] = src.split("/");
