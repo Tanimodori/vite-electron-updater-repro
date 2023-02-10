@@ -3,8 +3,6 @@ import nodeBuiltins from "builtin-modules/static";
 import electronBuiltins from "electron-builtins";
 
 const config: UserConfig = {
-  mode: process.env.MODE,
-  root: __dirname,
   build: {
     ssr: true,
     outDir: "dist",
@@ -25,9 +23,6 @@ const config: UserConfig = {
         ];
         return externalNames.includes(name);
       },
-    },
-    commonjsOptions: {
-      ignoreDynamicRequires: true,
     },
     emptyOutDir: true,
   },
